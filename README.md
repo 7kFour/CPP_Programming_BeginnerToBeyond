@@ -1,4 +1,5 @@
-# My notes and work from Beginning C++ Programming - From Beginner to Beyond (Tim Buchalka - Udemy) 
+# Beginning C++ Programming - From Beginner to Beyond (Tim Buchalka - Udemy) 
+My notes and work
 
 - Section4_5_6_StructureVariablesConstants_CompilerLinkerNotes
   - Includes all exercises and examples from Section 4,5,6 in one file 
