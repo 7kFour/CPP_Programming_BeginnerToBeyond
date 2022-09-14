@@ -1,0 +1,142 @@
+// Compiler errors - two types
+	syntax errors - something wrong with the structure eg missing an ;
+	semantic errors - something wrong with the meaning eg trying to do a + b;
+	
+	compilers are picky - their job is to translate the code you wrote into machine code
+	that functions as you specified
+	compiler won't guess at any meanings in your code - it will generate an error 
+
+// Compiler warnings
+	don't ignore them 
+	compiler has recognized an issue with your code that could lead to a problem or unexpected behavior
+	warning instead of error because compiler is still able to generate correct machine 
+	many programmers treat warnings as errors and fix them  
+	have a no warnings policy in your code - you should compile clean code with no warnings 
+
+// Linker errors
+	occur when the linker is trying to put all the pieces of a program together to create an executable 
+	usually there is a library or object file that is missing 
+
+// Runtime errors
+	errors that occur when the program is executing
+	examples - divide by zero, file not found, out of memory 
+	can cause program to 'crash'
+	exception handling can help to mitigate/deal with runtime errors 
+
+// Logic errors
+	errors or bugs in code that cause program to run incorrectly
+	they are mistakes made by the programmer - many causes for logic errors
+	also test and debug your code to find and correct errors
+
+// The process of compiling and linking is called building
+
+// C++ Keywords -- don't bother memorizing them 
+	https://en.cppreference.com/w/cpp/keyword
+
+	keywords are defined in the language and they are reserved
+		examples - int, break, bool, for, do 
+
+// C++ Identifiers
+	https://en.cppreference.com/w/cpp/language/identifiers
+
+	Identifier is something that the programmer makes - they represent something meaningful to the programmer
+		examples - main, include, endl, names of variables 
+
+// C++ Operators
+	https://www.learncpp.com/
+	see Chapter 5 Operators
+	
+	/ division operator
+	- subtraction operator 
+	<< stream insertion operator
+	>> stream extraction operator 
+	:: scope resolution operator
+
+// C++ Preprocessor / Preprocessor Directives
+	Processes your source code before the compiler sees it
+	Directives start with #
+		most commonly used is #include
+	https://en.cppreference.com/w/cpp/preprocessor
+	https://docs.microsoft.com/en-us/cpp/preprocessor/preprocessor-directives?view=msvc-170
+	https://docs.microsoft.com/en-us/cpp/preprocessor/c-cpp-preprocessor-reference?view=msvc-170
+
+	Preprocessor steps
+		strips all comments from source file and replaces them with a single space
+		looks for preprocessor directives -- lines that begin with #
+		when the preprocessor sees the directive it replaces the #include line with  
+			the file that its reffering to - it then recursively processes that file as well
+
+	by the time the compiler sees the source code all the comments have been stripped out 
+	and all the preprocessor directives have been processed and removed
+
+	preprocessor directives are commonly used to conditionally compile code
+		ex - using a preprocessor directive to include different libraries based on what
+			operating system the program is being executed on 
+
+	Important -- The C++ preprocessor does not understand C++ 
+		it simply follows the preprocessor directives and gets the source code
+		ready for the compiler (the compiler is the program that understands c++)
+
+// C++ main function -- main must be written in lowercase 
+	every c++ program must have exactly one main function somewhere
+	starting point of program execution
+	return 0 indicates successful program execution
+
+	2 versions that are both valid -- with and without command line arguments --
+
+	int main() {} <-- without -- expects no information from operating system
+		cmd /c program.exe
+
+	// argc stands for argument count (how many arguments to expect)
+	// argv is argument vector (program.exe argument1 argument2 -- program.exe is argument0)
+	int main(int argc, char *argv[1]) {} <-- with -- expects information from the OS
+		cmd /c program.exe argument1 argument2  <--- passing arguments from the command line
+
+	main must always return an integer
+
+// C++ Namespaces
+	scope resolution operator :: 
+	helps to avoid naming conflicts by allowing developers to use namespaces as containers to group
+		their code entities into namespace scopes 
+
+	you can explicity use namespaces eg
+		std::cout << "hi" << std::endl
+
+	you can use the 'using' namespace directive eg
+		using namespace standard;
+			this will allow you to use anything in the standard namespace without the ::
+			not a best practice do to this 
+	
+	qualified using namespace variant -- you only use what you need from a specific namespace -- eg
+	this is the best practice usually
+				using std::cout; 
+					cout << "hi" << std::endl;
+
+				or 
+
+				using std::cout;
+				using std::endl;
+					cout << "hi" << endl;
+
+	you can use 'using' inside functions/methods as well -- often a good practice 
+
+
+// Conditional Compilation
+	beyond the scope of the course -- but I've included a few links to get started on 
+	https://www.ibm.com/docs/en/zos/2.4.0?topic=directives-conditional-compilation
+	https://en.cppreference.com/w/cpp/preprocessor/conditional
+	https://docs.microsoft.com/en-us/cpp/preprocessor/hash-if-hash-elif-hash-else-and-hash-endif-directives-c-cpp?view=msvc-170
+
+
+
+
+// Challenge 1 Prompt
+	Create a C++ program that asks the user for their favorite number between 1 and 100
+	read this number from the console 
+
+	After receiving user input display a message to the console 
+	Ex. -- User enters 33 --
+		Amazing!! That's my favorite number too!
+		No, really, 33 is my favorite number!
+
+// Challenge 2 Prompt
